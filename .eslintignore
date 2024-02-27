@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore configs
+tsconfig.json
+
+# Ignore generated files
+yarn.lock
