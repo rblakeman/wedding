@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import '../panda-styles/styles.css';
 import './index.css';
+
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 

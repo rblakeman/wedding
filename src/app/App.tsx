@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import { Header, Page, Tab, TabBar, TabContent } from './App.styles';
 import {
     Hotel,
     Photos,
@@ -14,6 +14,10 @@ import { TabList, Tabs, defaultRoute } from './routes';
 
 function App() {
     const [selectedTab, setSelectedTab] = React.useState(defaultRoute);
+
+    const changeTabs = (tabId: Tabs, replace?: boolean) => {
+        setSelectedTab(tabId);
+    };
 
     const renderTab = () => {
         switch (selectedTab) {
@@ -36,26 +40,21 @@ function App() {
     };
 
     return (
-        <div className='App'>
-            <div className='Header' />
-            <div className='Tabs'>
+        <Page>
+            <Header />
+            <TabBar className='TabBar'>
                 {TabList.map(({ label, id }) => (
-                    <button
+                    <Tab
                         key={id}
-                        style={{
-                            background: 'unset',
-                            border: 'unset',
-                            color: 'unset',
-                            cursor: 'pointer',
-                            fontWeight: selectedTab === id ? '700' : '400',
-                        }}
-                        onClick={() => setSelectedTab(id)}>
+                        selected={selectedTab === id}
+                        onClick={() => changeTabs(id)}>
+                        {selectedTab === id ? '🥀' : ''}
                         {label}
-                    </button>
+                    </Tab>
                 ))}
-            </div>
-            <div className='Page'>{renderTab()}</div>
-        </div>
+            </TabBar>
+            <TabContent>{renderTab()}</TabContent>
+        </Page>
     );
 }
 
