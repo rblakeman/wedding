@@ -1,8 +1,10 @@
 # Ignore artifacts:
 build
 coverage
+panda-styles
 
 # Ignore configs
+craco.config.js
 tsconfig.json
 
 # Ignore generated files

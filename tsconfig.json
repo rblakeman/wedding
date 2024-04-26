@@ -14,7 +14,13 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["src/app/*"],
+            "@components/*": ["src/components/*"],
+            "@styles/*": ["panda-styles/*"]
+          }
     },
     "include": ["src", "panda-styles"]
 }

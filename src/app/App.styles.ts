@@ -1,4 +1,4 @@
-import { styled } from '../../panda-styles/jsx';
+import { styled } from '@styles/jsx';
 
 export const Page = styled('div', {
     base: {

@@ -5,17 +5,17 @@
     "scripts": {
         ":v": "yarn lint && yarn format && yarn typecheck && yarn test",
         "dev": "concurrently \"yarn start:panda\" \"yarn start\"",
-        "start": "react-scripts start",
+        "start": "craco start",
         "start:panda": "panda --watch",
         "prepare": "panda codegen",
-        "build": "yarn build:panda && react-scripts build",
+        "build": "yarn build:panda && craco build",
         "build:panda": "panda",
         "serve": "serve -s build",
         "lint": "eslint . && prettier . --check",
         "format": "eslint . --fix && prettier . --write",
         "typecheck": "tsc",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "test": "craco test",
+        "eject": "craco eject"
     },
     "dependencies": {
         "react": "^18.2.0",
@@ -25,6 +25,7 @@
         "web-vitals": "^3.5.2"
     },
     "devDependencies": {
+        "@craco/craco": "^7.1.0",
         "@pandacss/dev": "^0.32.1",
         "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.2.1",
